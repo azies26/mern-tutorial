@@ -12,6 +12,11 @@ const getGoals = (req,res) => {
 //@route    Get /api/goals
 //@access   Private
 const setGoal = (req,res) => {
+    if(!req.body.text){
+        res.status(400).json({message: 'Please add a text field'})
+    }
+
+
     res.status(200).json({message: 'Set Goals'})
 }
 //@desc     update goals
@@ -26,8 +31,6 @@ const updateGoal = (req,res) => {
 const deleteGoal = (req,res) => {
     res.status(200).json({message : 'Delete Goal ${req.params.id}'})
 }
-
-
 
 
 module.exports = {
