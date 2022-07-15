@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler')
+const goal = require('../models/goalModel')
 
 
 //@desc     Get goals
